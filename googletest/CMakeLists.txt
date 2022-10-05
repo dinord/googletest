@@ -109,6 +109,10 @@ if (INSTALL_GTEST)
     DESTINATION ${cmake_files_install_dir})
 endif()
 
+if(GTEST_HAS_ABSL)
+  find_package(absl REQUIRED)
+endif()
+
 # Where Google Test's .h files can be found.
 set(gtest_build_include_dirs
   "${gtest_SOURCE_DIR}/include"
